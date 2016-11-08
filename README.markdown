@@ -72,7 +72,7 @@ end function
 `m.top` is a special case within SceneGraph nodes as it references the topmost node for the SceneGraph XML component. You will see it used often. Here we use the `findNode` method to locate the `Group` we named `menuHolder` in the XML. We then add a child of type `mainMenu` to the menuHolder `Group` node.
 
 ##Creating a custom component
-Above we referenced `mainMenu`. This isn’t in the SceneGraph component set but is a custom(ish) component.
+Above we referenced `mainMenu`. This isn’t a fully native SceneGraph component set but is a custom(ish) component (it's as simple as custom components get - just extending a native component).
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
@@ -93,7 +93,7 @@ Above we referenced `mainMenu`. This isn’t in the SceneGraph component set but
 </component>
 ```
 
-You components can be groups of other components but this component just extends the SceneGraph component `LabelList` (Info on `LabelList` can be found here[https://sdkdocs.roku.com/display/sdkdoc/LabelList].
+You components can be groups of other components but this component just extends the SceneGraph component `LabelList` (Info on `LabelList` can be found [here](https://sdkdocs.roku.com/display/sdkdoc/LabelList).
 
 As you can see we have added two `ContentNodes` to the children. We add `ContentNode’s` to add data to our components. If you look at the first `ContentNode` you can see we have given it an attribute named `role` and it’s value is `content`. This makes sure that these elements get rendered as the data for the component. If you ran the app now you would get a nice background image but nothing would happen if we use the RCU.
 
@@ -111,7 +111,7 @@ end function
 ##Observers
 SceneGraph introduces native observable interfaces. If a component has a property that is made available via it’s interface you are able to watch that property, and when it changes trigger a function call. We are going to use this to change our background image.
 
-To observe a property first find the one you’re after in the SDK docs. I’m going to go with `itemFocused` so it triggers when we click up or down on the menu. To observe the field we add the line `m.mainMenu.observeField("itemFocused", "menuItemFocused”)` seen below. We also have to add the `menuItemFocused` function to handle when the event is triggered. Below we are just tracing out the value of the focused item in the menu.
+To observe a property first find the one you’re after in the [SDK docs](https://sdkdocs.roku.com/display/sdkdoc/LabelList). I’m going to go with `itemFocused` so it triggers when we click up or down on the menu. To observe the field we add the line `m.mainMenu.observeField("itemFocused", "menuItemFocused”)` seen below. We also have to add the `menuItemFocused` function to handle when the event is triggered. Below we are just tracing out the value of the focused item in the menu.
 
 ```
 function init() as Void
