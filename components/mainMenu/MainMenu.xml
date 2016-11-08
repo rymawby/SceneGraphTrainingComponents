@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="MainMenu" extends="LabelList" >
+
+  <children>
+
+    <ContentNode id="mainMenuContent" role="content" >
+
+      <ContentNode title="Earth" />
+      <ContentNode title="Moon" />
+
+    </ContentNode>
+
+  </children>
+
+</component>

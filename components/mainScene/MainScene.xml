@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="MainScene" extends="Scene" >
+    <interface>
+    </interface>
+
+    <children>
+
+      <Poster
+      id="backgroundPoster"
+      uri="pkg://images/fullscreen_earth.jpg"
+      width="1280"
+      height="720"
+      translation="[0,0]" />
+
+      <Group id="menuHolder"
+       translation="[100,200]" />
+
+    </children>
+    <script type="text/brightscript" uri="pkg://components/mainScene/MainScene.brs" />
+</component>
